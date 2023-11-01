@@ -1,3 +1,24 @@
+<?php
+
+function divideArray4($files)
+{
+    $counter = 0;
+    $divided = [];
+    foreach ($files as $img_source) {
+        $divided[$counter][] = $img_source;
+        $counter += 1;
+        if ($counter == 4) {
+            $counter = 0;
+        }
+    }
+    return $divided;
+}
+
+$path = "images/";
+$files = array_diff(scandir($path), array('.', '..'));
+$divided = divideArray4($files);
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,13 +35,21 @@
 </head>
 <body>
 
-<header></header>
-
 <main>
-    <section class="content"></section>
-</main>
+    <section class="content">
+        <div class="gallery">
+            <?php
+            foreach ($divided as $images) { ?>
+                <div class="column">
+                    <?php foreach ($images as $image) {
+                        $img_source = $path . $image ?>
+                        <img src="<?php echo $img_source ?>" alt="">
+                    <?php } ?>
+                </div>
+            <?php } ?>
 
-<footer></footer>
+    </section>
+</main>
 
 </body>
 </html>
