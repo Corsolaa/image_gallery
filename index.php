@@ -43,7 +43,11 @@ $divided = divideArray4($files);
                 <div class="column">
                     <?php foreach ($images as $image) {
                         $img_source = $path . $image ?>
-                        <img src="<?php echo $img_source ?>" alt="">
+                        <div class="image_container">
+                            <span><i class="fa-solid fa-copy"></i></span>
+                            <a style="display: none"><?php echo "https://www.brunobouwman.nl/" . $img_source ?></a>
+                            <img src="<?php echo $img_source ?>" alt="cool image">
+                        </div>
                     <?php } ?>
                 </div>
             <?php } ?>
@@ -51,5 +55,7 @@ $divided = divideArray4($files);
     </section>
 </main>
 
+<script src="https://kit.fontawesome.com/947c4c8fa0.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
 </body>
 </html>

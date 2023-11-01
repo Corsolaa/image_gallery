@@ -1,6 +1,7 @@
 :root {
     --text: black;
     --background: white;
+    --gap-size: 10px;
 }
 
 /* Removes all the stupid things from browser and makes sure everything fits well. */
@@ -38,4 +39,57 @@ summary,
 [type=submit],
 [type=checkbox] {
     cursor: pointer;
+}
+
+.gallery {
+    display: flex;
+    gap: var(--gap-size);
+    padding: var(--gap-size);
+}
+
+.gallery .column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-size);
+    
+    width: 25%;
+}
+
+.gallery .image_container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+}
+
+.gallery .image_container:hover img{
+    filter: blur(8px);
+}
+
+.gallery .image_container:hover span {
+    visibility: visible;
+    z-index: 1;
+    top: 50%;
+    cursor: pointer;
+}
+
+.gallery span {
+    visibility: hidden;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    transition: top .2s ease-in-out;
+
+    font-size: 50px;
+    color: white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.gallery img {
+    border-radius: 15px;
+    transition: filter .2s ease-in-out;
 }
