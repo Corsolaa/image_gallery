@@ -1,6 +1,6 @@
 <?php
 
-function divideArray4($files)
+function divideArray4($files): array
 {
     $counter = 0;
     $divided = [];
@@ -60,7 +60,8 @@ $divided = divideArray4($files);
                         $img_source = $path . $image ?>
                         <div class="image_container">
                             <span><i class="fa-solid fa-copy"></i></span>
-                            <a style="display: none"><?php echo "https://www.brunobouwman.nl/images/" . $img_source ?></a>
+                            <a style="display: none"><?php echo "https://www.brunobouwman.nl/images/" .
+                                    $img_source ?></a>
                             <img src="<?php echo $img_source ?>" alt="cool image">
                         </div>
                     <?php } ?>
