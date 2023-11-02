@@ -15,7 +15,12 @@ function divideArray4($files)
 }
 
 $path = "images/";
-$files = array_diff(scandir($path), array('.', '..'));
+if (is_dir($path)) {
+    $dir = scandir($path);
+} else {
+    $dir = [];
+}
+$files = array_diff($dir, array('.', '..'));
 $divided = divideArray4($files);
 ?>
 
