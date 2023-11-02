@@ -36,7 +36,7 @@ $divided = divideArray4($files);
     <title>Image Gallery</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="icon.ico">
+    <link rel="icon" href="../web_icons/src/image_gallery.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
