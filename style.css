@@ -20,7 +20,7 @@
 body {
     min-height: 100vh;
     color: var(--text);
-    font-family: sans-serif;
+    font-family: 'Roboto Slab', serif;
     background: var(--background);
 }
 
@@ -39,6 +39,26 @@ summary,
 [type=submit],
 [type=checkbox] {
     cursor: pointer;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+header p {
+    font-size: 2rem;
+}
+
+header p.small {
+    font-size: 1rem;
+    text-decoration: underline;
 }
 
 .gallery {

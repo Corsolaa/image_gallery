@@ -32,8 +32,18 @@ $divided = divideArray4($files);
 
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="icon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<header>
+    <h1>IMAGE GALLERY</h1>
+    <p>These are all the images that are hosted on my website.</p>
+    <p class="small">Hover over image and click the copy icon for the URL</p>
+</header>
 
 <main>
     <section class="content">
