@@ -14,7 +14,7 @@ function divideArray4($files)
     return $divided;
 }
 
-$path = "images/";
+$path = "src/";
 if (is_dir($path)) {
     $dir = scandir($path);
 } else {
@@ -60,7 +60,7 @@ $divided = divideArray4($files);
                         $img_source = $path . $image ?>
                         <div class="image_container">
                             <span><i class="fa-solid fa-copy"></i></span>
-                            <a style="display: none"><?php echo "https://www.brunobouwman.nl/" . $img_source ?></a>
+                            <a style="display: none"><?php echo "https://www.brunobouwman.nl/images/" . $img_source ?></a>
                             <img src="<?php echo $img_source ?>" alt="cool image">
                         </div>
                     <?php } ?>
