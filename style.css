@@ -1,44 +1,5 @@
 :root {
-    --text: black;
-    --background: white;
     --gap-size: 10px;
-}
-
-/* Removes all the stupid things from browser and makes sure everything fits well. */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    html {
-        scroll-behavior: smooth;
-    }
-}
-
-body {
-    min-height: 100vh;
-    color: var(--text);
-    font-family: 'Roboto Slab', serif;
-    background: var(--background);
-}
-
-/* Makes sure that images always fit and are visible. */
-img, picture, svg, video {
-    display: block;
-    max-width: 100%;
-}
-
-/* Makes sure that all clickable have a pointer cursor. */
-label,
-button,
-select,
-summary,
-[type=radio],
-[type=submit],
-[type=checkbox] {
-    cursor: pointer;
 }
 
 header {
@@ -47,19 +8,28 @@ header {
     align-items: center;
     text-align: center;
     padding: 25px;
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 2rem;
+    }
+
+    p.small {
+        font-size: 1rem;
+        text-decoration: underline;
+    }
 }
 
-header h1 {
-    font-size: 3rem;
-}
+main {
+    display: flex;
+    justify-content: center;
 
-header p {
-    font-size: 2rem;
-}
-
-header p.small {
-    font-size: 1rem;
-    text-decoration: underline;
+    section.content {
+        width: 1000px;
+    }
 }
 
 .gallery {
@@ -67,61 +37,69 @@ header p.small {
     flex-wrap: wrap;
     gap: var(--gap-size);
     padding: var(--gap-size);
-}
 
-.gallery .column {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-size);
+    max-width: 1000px;
 
-    width: calc(25% - 9px);
-}
+    .column {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-size);
 
-.gallery .image_container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
+        width: calc(25% - 9px);
+    }
 
-    overflow: hidden;
+    .image_container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
 
-    border-radius: 15px;
-}
+        overflow: hidden;
 
-.gallery .image_container:hover img {
-    filter: blur(8px);
-}
+        border-radius: 15px;
+    }
 
-.gallery .image_container:hover span {
-    visibility: visible;
-    z-index: 1;
-    top: calc(50% - 30px);
-    cursor: pointer;
-}
+    .image_container:hover {
+        img {
+            filter: blur(8px);
+        }
 
-.gallery span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        span {
+            visibility: visible;
+            z-index: 1;
+            top: calc(50% - 30px);
+            cursor: pointer;
+        }
+    }
 
-    visibility: hidden;
-    position: absolute;
-    top: calc(45% - 30px);
-    left: calc(50% - 30px);
-    transition: top .2s ease-in-out;
+    .wrapper {
+        background: #F5F6F7;
+    }
 
-    font-size: 50px;
-    color: black;
-    background: white;
-    border-radius: 5px;
-    border: 3px solid black;
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    width: 60px;
-    aspect-ratio: 1/1;
-}
+        visibility: hidden;
+        position: absolute;
+        top: calc(45% - 30px);
+        left: calc(50% - 30px);
+        transition: top .2s ease-in-out;
 
-.gallery img {
-    border-radius: 15px;
-    transition: filter .2s ease-in-out;
+        font-size: 35px;
+        color: white;
+        border-radius: 15px;
+        /*border: none solid black;*/
+        background: rgb(255,0,234);
+        background: linear-gradient(232deg, rgb(225, 0, 161) 20%, rgb(0, 180, 218) 70%);
+        width: 60px;
+        aspect-ratio: 1/1;
+    }
+
+    img {
+        border-radius: 15px;
+        transition: filter .2s ease-in-out;
+    }
 }
 
 .spin-ani {
@@ -151,17 +129,18 @@ header p.small {
 @media only screen and (max-width: 550px) {
     header {
         padding: 10px;
-    }
-    header h1 {
-        font-size: 2.5rem;
-    }
 
-    header p {
-        font-size: 1.4rem;
-    }
+        h1 {
+            font-size: 2.5rem;
+        }
 
-    header p.small {
-        font-size: 0.9rem;
+        p {
+            font-size: 1.4rem;
+        }
+
+        p.small {
+            font-size: 0.9rem;
+        }
     }
 
     .gallery .column {

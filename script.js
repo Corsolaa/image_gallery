@@ -1,4 +1,4 @@
-const copy_buttons = document.querySelectorAll(".fa-copy");
+const copy_buttons = document.querySelectorAll(".fa-link");
 
 copy_buttons.forEach((but) => {
     const parent = but.parentElement.parentElement;
@@ -17,7 +17,6 @@ copy_buttons.forEach((but) => {
         const copyContent = async () => {
             try {
                 await navigator.clipboard.writeText(link);
-                console.log('Content copied to clipboard');
             } catch (err) {
                 console.error('Failed to copy: ', err);
             }
@@ -28,7 +27,7 @@ copy_buttons.forEach((but) => {
 
     parent.addEventListener("mouseleave", () => {
         if (but.classList.contains("fa-square-check")) {
-            but.setAttribute("class", "fa-solid fa-copy");
+            but.setAttribute("class", "fa-solid fa-link");
         }
     });
 

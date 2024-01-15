@@ -36,6 +36,7 @@ $divided = divideArray4($files);
     <title>Image Gallery</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="http://www.brunobouwman.nl/standard.css">
     <link rel="icon" href="../web_icons/src/image_gallery.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +60,7 @@ $divided = divideArray4($files);
                     <?php foreach ($images as $image) {
                         $img_source = $path . $image ?>
                         <div class="image_container">
-                            <span><i class="fa-solid fa-copy"></i></span>
+                            <span><i class="fa-solid fa-link"></i></span>
                             <a style="display: none"><?php echo "https://www.brunobouwman.nl/images/" .
                                     $img_source ?></a>
                             <img src="<?php echo $img_source ?>" alt="cool image">
